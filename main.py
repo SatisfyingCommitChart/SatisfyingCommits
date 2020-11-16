@@ -17,6 +17,6 @@ def commitFiles():
     cp = cmd.run("git push -u origin master -f", check=True, shell=True)
     
 scheduler = BlockingScheduler()
-scheduler.add_job(dailyCommits, 'interval', seconds = 1)
+scheduler.add_job(dailyCommits, 'interval', minutes = 30)
 # scheduler.add_job(commitFiles, 'interval', seconds = 15)
 scheduler.start()
